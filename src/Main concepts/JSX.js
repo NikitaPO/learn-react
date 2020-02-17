@@ -8,13 +8,27 @@ JSX элементы могут быть использованы внутри �
 Примеры JSX элементов:
 =========================================>
 */
-let text = <h1>Very reactive</h1>;
+const text = <span className="title">Very reactive</span>;
 
 export default function JSX() {
   return (
     <p className="react_paragraph">
-      <h1>React is...</h1>
+      <span>React is...</span>
       {text}
     </p>
   );
 }
+
+// После преобразования JSX код становится таким:
+
+// React.createElement('h1', {className: 'title', children: 'Very reactive'})
+
+// И в последствии преобразуется в объект похожий на этот:
+
+// const text = {
+//   type: 'h1',
+//   props: {
+//     className: 'title',
+//     children: 'Very reactive'
+//   }
+// }
