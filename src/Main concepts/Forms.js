@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Form } from "semantic-ui-react";
 
 export default function Forms() {
-  const [userName, setUserName] = useState(null);
-  const [userDescription, setUserDescription] = useState(null);
+  const [userName, setUserName] = useState("");
+  const [userDescription, setUserDescription] = useState("");
   const [userGender, setUserGender] = useState("not selected");
 
   const inputChangeHandler = event => {
@@ -55,9 +55,7 @@ export default function Forms() {
           <select value={userGender} onChange={changeGenderHandler}>
             <option value="man">Man</option>
             <option value="women">Women</option>
-            <option selected value="not selected">
-              Not selected
-            </option>
+            <option value="not selected">Not selected</option>
           </select>
         </label>
         <br />
